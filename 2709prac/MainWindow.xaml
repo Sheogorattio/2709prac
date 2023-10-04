@@ -16,9 +16,45 @@
 
         <Label Background="AliceBlue">
             <WrapPanel>
-                <Button Content="Button1" Margin="5" Width="60" Height="30"/>
-                <Button Content="Button2" Margin="5" Width="60" Height="30"/>
-                <Button Content="Button3" Margin="5" Width="60" Height="30"/>
+                <Button Content="Button1" Margin="5" Width="60" Height="30">
+                    <Button.ToolTip>
+                        <Image Source="/Images/2.jpg"/>
+                    </Button.ToolTip>
+                </Button>
+                <Button Margin="5" Width="60" Height="30">
+                    <Grid>
+                        <TextBlock Text="Button2" MouseEnter="OnMouseEnterText"/>
+                        <Popup Name= "PP1" StaysOpen="True">
+                            <Border BorderThickness="3" BorderBrush="Gray">
+                                <Grid Height="100" Width="100">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Text="Button2" Grid.Row="0" Background="White"/>
+                                    <Button Content="Close" Grid.Row="1" Click="OnClick"/>
+                                </Grid>
+                            </Border>
+                        </Popup>
+                    </Grid>
+                </Button>
+                <Button Margin="5" Width="60" MouseEnter="Button_MouseEnter">
+                <Grid>
+                    <TextBlock Text="Button3"/>
+                    <Popup Name= "PP2" StaysOpen="True">
+                        <Border BorderThickness="3" BorderBrush="Gray">
+                            <Grid Height="100" Width="100">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="Button3" Grid.Row="0" Background="White"/>
+                                <Button Content="Close" Grid.Row="1" Click="OnClick"/>
+                            </Grid>
+                        </Border>
+                    </Popup>
+                </Grid>
+                </Button>
             </WrapPanel>
         </Label>
        
@@ -30,11 +66,15 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel Background="Bisque">
-                <Button Content="Button1" Margin="5" Grid.Column="0" Width="60" Height="30"/>
-                <Button Content="Button2" Margin="5" Grid.Column="0" Width="60" Height="30"/>
-                <Button Content="Button3" Margin="5" Grid.Column="0" Width="60" Height="30"/>
-                <Button Content="Button4" Margin="5" Grid.Column="0" Width="60" Height="30"/>
-                <Button Content="Button5" Margin="5" Grid.Column="0" Width="60" Height="30"/>
+                <Button Content="Button1" Margin="5" Grid.Column="0" Width="60" Height="30">
+                    <Button.ToolTip>
+                        <Image Source="/Images/3.jpg"/>
+                    </Button.ToolTip>
+                </Button>
+                <Button Content="Button2" Margin="5" Grid.Column="0" Width="60" Height="30" ToolTip="Button2"/>
+                <Button Content="Button3" Margin="5" Grid.Column="0" Width="60" Height="30" ToolTip="Button3"/>
+                <Button Content="Button4" Margin="5" Grid.Column="0" Width="60" Height="30" ToolTip="Button4"/>
+                <Button Content="Button5" Margin="5" Grid.Column="0" Width="60" Height="30" ToolTip="Button5"/>
             </StackPanel>
 
             <Grid Grid.Column="1">
@@ -49,10 +89,26 @@
                               HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
                               Height="4" Background="Gray"/>
                 <UniformGrid Grid.Row="2">
-                    <Button Content="Button1"/>
-                    <Button Content="Button2"/>
-                    <Button Content="Button3"/>
-                    <Button Content="Button4"/>
+                    <Button Content="Button1">
+                        <Button.ToolTip>
+                            <!--<Grid>-->
+                                <Image Source="/Images/1.jpg"/>
+                            <!--</Grid>-->
+                        </Button.ToolTip>
+                    </Button>
+                    <Button Content="Button2" ToolTip="Button2">
+                        
+                    </Button>
+                    <Button Content="Button3">
+                        <Button.ToolTip>
+                            <Image Source="/Images/3.jpg"/>
+                        </Button.ToolTip>
+                    </Button>
+                    <Button Content="Button4">
+                        <Button.ToolTip>
+                            <Image Source="/Images/4.jpg"/>
+                        </Button.ToolTip>
+                    </Button>
                 </UniformGrid>
 
             </Grid>
